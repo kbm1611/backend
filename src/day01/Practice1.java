@@ -2,7 +2,7 @@ package day01;
 
 import java.util.Scanner;
 
-public class practice1 {
+public class Practice1 {
     public static void main(String[] args) {
         //문제1
         System.out.println( 25 );
