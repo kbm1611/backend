@@ -37,10 +37,10 @@ public class Practice1 {
         String content = "안녕하세요!";
         System.out.printf("""
                 ===========방문록==========
-                번호 작성자 방문록
-                %d  %s %s
+                %-3s %-5S %-20S
+                %-4d %-5s %-20s
                 ==========================
-                """, num, writer, content);
+                """, "번호", "작성자", "방문록", num, writer, content);
 
         //문제8
         Scanner scan1 = new Scanner( System.in );
@@ -58,7 +58,11 @@ public class Practice1 {
         String title = scan1.nextLine();
         System.out.print("내용: ");
         String content2 = scan1.nextLine();
-        System.out.printf("[%d번 게시물]\n제목: %s\n내용: %s\n", boardnum, title, content2);
+        System.out.printf("""
+                [%d번 게시물]
+                제목: %s
+                내용: %s
+                """, boardnum, title, content2);
 
         //문제10
         System.out.print("성별을 입력하세요(남/여): ");
@@ -75,6 +79,11 @@ public class Practice1 {
         System.out.print("프로그래머입니까?(true/false):");
         boolean isProgramer = scan1.nextBoolean();
 
-        System.out.printf("이름:%s\n나이:%d\n키:%f\n프로그래머 여부:%s\n", name3, age4, height2, isProgramer);
+        System.out.printf("""
+                이름:%s
+                나이:%d
+                키:%f
+                프로그래머 여부:%s
+                """, name3, age4, height2, isProgramer);
     }
 }
