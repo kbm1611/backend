@@ -169,14 +169,15 @@ viewer: '콘텐츠 조회만 가능합니다.'
 입력 예시: 총 구매 금액: 60000
 출력 예시: 최종 결제 금액: 54000원 */
         System.out.print("총 구매 금액:"); int price  = scan.nextInt();
+        double finalPrice = price;
         if( price >= 50000 ){
-            price *= 0.9;
+            finalPrice *= 0.9;
         }else if( price >= 30000 ){
-            price *= 0.95;
+            finalPrice *= 0.95;
         }else if( price >= 10000 ){
-            price *= 0.99;
+            finalPrice *= 0.99;
         }
-        System.out.println("최종 결제 금액: " + price);
+        System.out.println("최종 결제 금액: " + (int)finalPrice);
 
 /*[문제 11] 1부터 12 사이의 월(Month)을 숫자로 입력받아, 해당하는 계절을 출력하는 프로그램을 작성하시오. 만약 1~12 이외의 숫자를 입력하면 '잘못된 월입니다.'를 출력하세요.
 봄: 3, 4, 5월
