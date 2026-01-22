@@ -250,23 +250,10 @@ viewer: '콘텐츠 조회만 가능합니다.'
         System.out.print("두 번째 정수:"); int num2 = scan.nextInt();
         System.out.print("세 번째 정수:"); int num3 = scan.nextInt();
 
-        if(num1 >= num2){
-            if(num2 >= num3){
-                System.out.printf("%d, %d, %d\n", num1, num2, num3);
-            } else if(num1 >= num3){
-                System.out.printf("%d, %d, %d\n", num1, num3, num2);
-            } else{
-                System.out.printf("%d, %d, %d\n", num3, num1, num2);
-            }
-        } else{
-            if(num1 >= num3){
-                System.out.printf("%d, %d, %d\n", num2, num1, num3);
-            } else if(num2 >= num3) {
-                System.out.printf("%d, %d, %d\n", num2, num3, num1);
-            } else{
-                System.out.printf("%d, %d, %d\n", num3, num2, num1);
-            }
-        }
+        if(num1 > num2 ){ int temp = num1 ; num1 = num2 ; num2 = temp; }; //큰 수로 스왑
+        if(num1 > num3 ){ int temp = num1 ; num1 = num3 ; num3 = temp; };
+        if(num2 > num3 ){ int temp = num2 ; num2 = num3 ; num3 = temp; };
+        System.out.printf("%d, %d, %d\n", num1, num2, num3);
 
 /*[문제 15] 가위바위보 게임
 지시: 두 명의 플레이어가 참여하는 가위바위보 게임을 만드시오.
@@ -283,7 +270,7 @@ viewer: '콘텐츠 조회만 가능합니다.'
         System.out.print("플레이어1 (0:가위, 1:바위, 2:보):"); int rsp1 = scan.nextInt();
         System.out.print("플레이어2 (0:가위, 1:바위, 2:보):"); int rsp2 = scan.nextInt();
 
-        if((rsp1 == 0 && rsp2 == 2) || (rsp1 == 1 && rsp2 == 0) || (rsp1 == 2 && rsp2 == 1) ){
+        if(rsp1 == (rsp2 + 1) % 3 ){
             System.out.println("플레이어1 승리");
         }else if(rsp1 == rsp2){
             System.out.println("무승부");
