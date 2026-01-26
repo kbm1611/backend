@@ -22,8 +22,8 @@ public class BoardService { //class start
             //[5] 제어문, 코드 흐름 제어( 논리적인 사고, 경우의 수 등)
             if( ch == 1 ){
                 scan.nextLine(); // .nextLine() 앞에 다른 next 존재하면 하나로 인식
-                System.out.println("내용 : " );   String 내용 = scan.nextLine();
-                System.out.println("작성자 : ");   String 작성자 = scan.nextLine();
+                System.out.print("내용 : " );   String 내용 = scan.nextLine();
+                System.out.print("작성자 : ");   String 작성자 = scan.nextLine();
                 if( content1 == null && writer1 == null){
                     content1 = 내용; writer1 = 작성자;
                 } else if( content2 == null && writer2 == null){
