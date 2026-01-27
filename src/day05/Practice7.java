@@ -90,6 +90,11 @@ public class Practice7 {
         System.out.println("tele.volume = " + tele.volume);
 
         //문제8
+        //클래스명은 무조건 첫글자 대문자로 시작한다.
+        // 클래스(객체 표현한 설계도|논리적)
+        // vs 객체( 속성과기능 갖는 대상 ) -> 좀 더 추상적인 개념(객체를 다루기 위해서는 클래스를 만들고 사용하기 위해서는 인스턴스로 만드는 것)
+        // vs 인스턴스( 클래스 기반으로 물리적 생성), new 인스턴스화 키워드 메모리 생성되면서 주소값을 갖는다.
+        // 생성된 객체는 변수에 저장하지 않으면 일정시간이 지나면 GC(쓰레기 수집기)가 삭제한다.
         Player player1 = new Player();
         player1.name = "손흥민";
         player1.power = 90;

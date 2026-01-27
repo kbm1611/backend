@@ -22,16 +22,16 @@ public class BoardService3 {
                 System.out.print("내용 : " );   board.content = scan.nextLine();
                 System.out.print("작성자 : ");   board.writer = scan.nextLine();
 
+                boolean check = false;
                 for(int index = 0; index <= boards.length-1; index++){
                     if( boards[index] == null){
                         boards[index] = board;
-                        System.out.println("[안내] 글쓰기 성공");
-                        System.out.println();
-                        break;
-                    } else{
-                        System.out.println("[경고] 게시물 등록할 공간이 없습니다.");
+                        check = true; break;
                     }
                 }
+                if(check){ System.out.println("[안내] 글쓰기 성공"); System.out.println(); }
+                else{ System.out.println("[경고] 게시물 등록할 공간이 없습니다."); }
+
             }else if(ch == 2){
                 for(int index = 0; index<= boards.length-1; index++){
                     if(boards[index] == null){
