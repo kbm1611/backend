@@ -1,4 +1,4 @@
-package day07;
+package day07.practice9;
 
 public class BankAccount {
     String accountNumber;
