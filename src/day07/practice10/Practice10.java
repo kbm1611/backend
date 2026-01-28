@@ -1,8 +1,5 @@
 package day07.practice10;
 
-import java.util.Scanner;
-import java.util.Timer;
-
 public class Practice10 {
     public static void main(String[] args) {
 
