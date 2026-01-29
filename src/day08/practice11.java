@@ -41,13 +41,10 @@ public class practice11 {
 
         //문세6
         ArrayList<Book> library = new ArrayList<>();
-        Book book1 = new Book("이것이 자바다", "장용권");
-        Book book2 = new Book("이것이 C언어다", "이세희");
-        Book book3 = new Book("이것은 음식이다", "이건우");
 
-        library.add(book1);
-        library.add(book2);
-        library.add(book3);
+        library.add( new Book("이것이 자바다", "장용권") );
+        library.add( new Book("이것이 C언어다", "이세희") );
+        library.add( new Book("이것은 음식이다", "이건우") );
 
         for( Book book : library){
             System.out.printf("책 제목: %s, 저자: %s\n", book.title, book.author);
