@@ -29,18 +29,12 @@ class Car{
     void run(){ this.tire.roll(); }
 }
 class Tire{
-    void roll(){
-        System.out.println("[일반]타이어가 회전");
-    }
+    void roll(){ System.out.println("[일반]타이어가 회전"); }
 }
 class HankookTire extends Tire{
-    void roll(){
-        System.out.println("[한국]타이어가 회전(업그레이드)");
-    }
+    void roll(){ System.out.println("[한국]타이어가 회전(업그레이드)"); }
 }
 class KumhoTire extends Tire{
-    void roll(){
-        System.out.println("[금호]타이어가 회전(업그레이드)");
-    }
+    void roll(){ System.out.println("[금호]타이어가 회전(업그레이드)"); }
 }
 

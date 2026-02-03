@@ -1,8 +1,5 @@
 package day11;
 
-import javax.swing.plaf.SplitPaneUI;
-import java.util.Arrays;
-
 public class Exam1 {
     public static void main(String[] args) {
         // [1] 상속 : A클래스로 부터 B클래스 에게(멤버변수/메소드) 물려주는 행위
@@ -59,7 +56,7 @@ class Animal{
         System.out.println( name );
     }
 }
-class Bird extends Animal{
+class Bird extends Animal {
     // 조류 클래스는 동물 클래스로부터 상속받는다.
 }
 class Sparrow extends Bird{
