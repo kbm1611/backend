@@ -1,8 +1,4 @@
-package day11.Practice12;
-
-import day07.package1.A;
-
-import javax.crypto.Mac;
+package day9.Practice12;
 
 public class Practice12 {
     public static void main(String[] args) {
