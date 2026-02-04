@@ -25,7 +25,7 @@ CREATE TABLE orders (
     order_qty    INT NOT NULL,                   -- 주문수량
     order_date   DATE,                           -- 주문일
     CONSTRAINT PRIMARY KEY (order_id),         -- 기본키 제약조건
-    CONSTRAINT FOREIGN KEY (book_id) REFERENCES books(book_id) -- 외래키 제약조건
+    CONSTRAINT FOREIGN KEY (book_id) REFERENCES books(book_id) on delete cascade -- 외래키 제약조건
 );
 
 -- 샘플 데이터 삽입
@@ -109,7 +109,6 @@ select * from books;
 delete from orders where customer = '이서연';
 select * from orders;
 -- [문제 8]books 테이블에서 재고(stock)가 0 이하(<= 0) 인 도서를 삭제하세요.
-delete from orders where book_id in (select book_id from books where stock <= 0);
 delete from books where stock <= 0;
 select * from books;
 -- [문제 9]orders 테이블에서 주문수량(order_qty)이 3 이상(>=) 인 주문 데이터를 삭제하세요.
