@@ -99,6 +99,6 @@ select * from member limit 0,5;		-- 1페이지, 5개 조회 ( 1페이지 )
 select * from member limit 5,5;		-- 2페이지, 5개 조회 ( 2페이지 )
 
 # select 작성 규칙/순서
-# select 속성명 from 테이블명 where 일반조건 group by 그룹기준 having 그룹조건 order by 
-#
-#
+# select 속성명 from 테이블명 where 일반조건 group by 그룹기준 having 그룹조건 order by 정렬기준 limit 개수
+# select 처리 순서
+# from -> where -> group by -> having -> order by -> limit
