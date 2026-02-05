@@ -5,10 +5,12 @@ import javax.xml.crypto.Data;
 public class Practice13 {
     public static void main(String[] args) {
         //문제1
-        Soundable cat = new Cat();
-        Soundable dog = new Dog();
-        cat.makeSound();
-        dog.makeSound();
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+        Soundable soundable = cat;
+        soundable.makeSound();
+        soundable = dog;
+        soundable.makeSound();
 
         //문제2
         System.out.println(RemoteControl.MAX_VOLUME);
@@ -27,9 +29,10 @@ public class Practice13 {
         new Character().useWeapon(gun);
 
         //문제5
-        Duck duck = new Duck();
-        duck.fly();
-        duck.swimmable();
+        Flyable flyable = new Duck();
+        Swimmable swimmable = new Duck();
+        flyable.fly();
+        swimmable.swimmable();
 
         //문제6
         Object duck2 = new Duck();
