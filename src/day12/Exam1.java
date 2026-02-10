@@ -93,8 +93,10 @@ public class Exam1 {
         double val2 = Double.parseDouble( "3.14" ); // "3.14" -> 3.14
         float val3 = Float.parseFloat( "3.14" ); // "3.14" -> 3.14
         boolean val4 = Boolean.parseBoolean( "true" ); // "true" -> true
+
         //기본타입 --> 문자열 변환
         String s1 = 100+""; //기본타입자료+""     // 100 -> "100"
         String s2 = String.valueOf(100);    // 100 -> "100"
+
     }
 }
