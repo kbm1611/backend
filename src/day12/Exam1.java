@@ -2,6 +2,10 @@ package day12;
 
 import 종합.예제7.model.dto.BoardDto;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 public class Exam1 {
     public static void main(String[] args) {
 
@@ -44,5 +48,53 @@ public class Exam1 {
         System.out.println( o9.hashCode() ); // 666641942
         System.out.println( o8.hashCode() ); // 960604060
 
+
+        // [2] Class : 클래스 정보(멤버변수/메소드 등등) 담는 클래스
+        String obj1 = new String(); Class c1 = obj1.getClass();
+        System.out.println( c1 ); // class java.lang.String
+
+        Integer obj2 = 3;           Class c2 = obj2.getClass();
+        System.out.println( c2 ); // class java.lang.Integer
+
+        // 2-1) Class.forName("패키지명.클래스명"); , 일반예외
+        // *** 리플렉션 ***: 최초실행(컴파일) 할 때 객체 생성하지 않고 실행 도중에 객체 생성 = 동적 처리
+        // 사용처 : JDBC( db연동 ) , 스프링프레임워크( 자바플랫폼 ) = 외부라이브러리 동적 객체 생성
+        try{ Class.forName("java.lang.String"); } // String 클래스가 존재하면 객체가 동적으로 생성된다.
+        catch( ClassNotFoundException e ){ }
+
+        // 2-2)
+        Field[ ] fields = c1.getFields(); // 클래스 내 모든 멤버변수/속성/필드명 확인(*private 제외)
+        for( int i = 0; i < fields.length; i++){
+            System.out.println( fields[i] );
+        }
+
+        Constructor[ ] constructors = c1.getConstructors(); // 클래스 내 모든 생성자 확인( 매개변수 확인 )
+        for(int i = 0; i < constructors.length; i++){
+            System.out.println( constructors[i] ); // 15개 , 오버로딩 이용한 다수의 생성자
+        }
+
+        Method[ ] methods = c1.getMethods(); //클래스 내 모든 메소드 확인
+        for(int i = 0; i < methods.length; i++){
+            System.out.println( methods[i] );
+        }
+
+
+        // [3] Wrapper(래퍼) 클래스 : 기본타입 --> 참조타입 표현 , 장점: 기본타입은 멤버변수/메소드(기능)이 없다.
+        int value1 = 100; // 자료:100 , 분류/타입:int
+        Integer value2 = 100; // 자료:100 , 분류/타입:Integer
+        //System.out.println( value1.toString() );
+        System.out.println( value2.toString() ); // Integer 참조타입으로 기능(메소드)가 있다.
+        // 3-1 언박싱
+        int value3 = value2; // Integer -> int 언박싱 , 참조타입 -> 기본타입
+        Integer value4 = value1; // int -> Integer 오토박싱, 기본타입 -> 참조타입
+
+        // 자바에서 외부자료들과 자료들을 주고받을 때 타입변환( 엑셀/CSV/공공데이터API/JS통신/PYTHON통신 )
+        int val1 = Integer.parseInt( "100" ); // "100" -> 100
+        double val2 = Double.parseDouble( "3.14" ); // "3.14" -> 3.14
+        float val3 = Float.parseFloat( "3.14" ); // "3.14" -> 3.14
+        boolean val4 = Boolean.parseBoolean( "true" ); // "true" -> true
+        //기본타입 --> 문자열 변환
+        String s1 = 100+""; //기본타입자료+""     // 100 -> "100"
+        String s2 = String.valueOf(100);    // 100 -> "100"
     }
 }
