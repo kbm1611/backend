@@ -35,10 +35,8 @@ public class Practice17 {
 
         //문제4
         TreeSet<Integer> treeSet = new TreeSet<>();
-        for(int num : draw){
-            treeSet.add(num);
-        }
-        System.out.println("[정렬된 추첨번호]" + treeSet);
+        treeSet.addAll( lottoSet ); //다른 집합의 요소들을 새로운 요소에 대입 .addAll( 집합객체 )
+        System.out.println("[정렬된 추첨번호]" + treeSet.descendingSet() ); // .descendingSet() : 내림차순
 
         //문제5
         Map<String, Integer> map = new Hashtable<>();
@@ -61,21 +59,21 @@ public class Practice17 {
 
         //문제7
         String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
-        Map<String, String> map2 = new HashMap<>();
+        Map<String, String> jsonmap = new HashMap<>();
         System.out.println(json);
         json = json.replace("{", "");
         json = json.replace("}", "");
-        json = json.replaceAll("\"", "");
-        String[] entity = json.split(",");
-        for(int i = 0; i <= entity.length-1; i++){
-            String[] keyValue = entity[i].split(":");
-            map2.put( keyValue[0], keyValue[1]);
+        System.out.println(json);
+        String[] jsonAry = json.split(",");
+        for(int i = 0; i <= jsonAry.length-1; i++){
+            String[] keyValue = jsonAry[i].split(":");
+            jsonmap.put( keyValue[0], keyValue[1]);
         }
-        System.out.println( "[name]" + map2.get("name") );
-        System.out.println( "[age]" + map2.get("age") );
+        System.out.println( "[name]" + jsonmap.get("name") );
+        System.out.println( "[age]" + jsonmap.get("age") );
         System.out.println( "[all]" );
-        map2.keySet().forEach((key) -> {
-            String value = map2.get(key);
+        jsonmap.keySet().forEach((key) -> {
+            String value = jsonmap.get(key);
             System.out.println( key + "=" + value );
         });
 
@@ -84,10 +82,12 @@ public class Practice17 {
         stock1.put("name", "삼성전자");
         stock1.put("price", 72000);
         stock1.put("volume", 1500000);
+
         Map<String, Object> stock2 = new HashMap<>();
         stock2.put("name", "카카오");
         stock2.put("price", 52000);
         stock2.put("volume", 800000);
+
         Map<String, Object> stock3 = new HashMap<>();
         stock3.put("name", "네이버");
         stock3.put("price", 210000);
